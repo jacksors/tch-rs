@@ -1,6 +1,6 @@
 [package]
 name = "tch-plus"
-version = "0.18.2"
+version = "0.18.3"
 authors = ["Laurent Mazare <lmazare@gmail.com>"]
 edition = "2021"
 build = "build.rs"
