@@ -368,7 +368,7 @@ impl SystemInfo {
 
         match self.os {
             Os::Linux | Os::Macos => {
-                // Pass the libtorch lib dir to crates that use torch-sys. This will be available
+                // Pass the libtorch lib dir to crates that use torch-sys-plus. This will be available
                 // as DEP_TORCH_SYS_LIBTORCH_LIB, see:
                 // https://doc.rust-lang.org/cargo/reference/build-scripts.html#the-links-manifest-key
                 println!("cargo:libtorch_lib={}", self.libtorch_lib_dir.display());

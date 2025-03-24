@@ -1,7 +1,7 @@
 use pyo3::exceptions::{PyTypeError, PyValueError};
 use pyo3::prelude::*;
 pub use tch;
-pub use torch_sys;
+pub use torch_sys_plus;
 
 pub struct PyTensor(pub tch::Tensor);
 

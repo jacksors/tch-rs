@@ -3,8 +3,8 @@
 use crate::{Device, Kind, Layout, Scalar, TchError, Tensor};
 use std::borrow::Borrow;
 use std::convert::Into;
-use torch_sys::c_generated::*;
-use torch_sys::*;
+use torch_sys_plus::c_generated::*;
+use torch_sys_plus::*;
 
 fn ptr_list_opt<T: Borrow<Tensor>>(l: &[Option<T>]) -> Vec<*mut C_tensor> {
     l.iter().map(|x| x.as_ref().map_or(std::ptr::null_mut(), |x| x.borrow().c_tensor)).collect()

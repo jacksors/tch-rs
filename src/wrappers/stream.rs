@@ -1,5 +1,5 @@
 use std::io::{Read, Result, Seek, SeekFrom};
-use torch_sys::io::ReadStream;
+use torch_sys_plus::io::ReadStream;
 
 pub struct ReadSeekAdapter<T> {
     inner: T,

@@ -10,8 +10,8 @@ use libc::{c_char, c_int, c_void};
 use std::borrow::Borrow;
 use std::io::{Read, Seek, Write};
 use std::path::Path;
-use torch_sys::io::ReadStream;
-use torch_sys::*;
+use torch_sys_plus::io::ReadStream;
+use torch_sys_plus::*;
 
 /// A tensor object.
 #[must_use]
@@ -754,7 +754,7 @@ impl Tensor {
     /// large tensors.
     pub fn to_string(&self, lw: i64) -> Result<String, TchError> {
         let s =
-            unsafe_torch_err!(ptr_to_string(torch_sys::at_to_string(self.c_tensor, lw as c_int)));
+            unsafe_torch_err!(ptr_to_string(torch_sys_plus::at_to_string(self.c_tensor, lw as c_int)));
         match s {
             None => Err(TchError::Kind("nullptr representation".to_string())),
             Some(s) => Ok(s),

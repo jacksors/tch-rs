@@ -1,6 +1,6 @@
 [package]
 name = "tch-plus"
-version = "0.18.1"
+version = "0.18.2"
 authors = ["Laurent Mazare <lmazare@gmail.com>"]
 edition = "2021"
 build = "build.rs"
@@ -22,7 +22,7 @@ libc = "0.2.0"
 ndarray = "0.15"
 rand = "0.8"
 thiserror = "1"
-torch-sys = { version = "0.18.1", path = "torch-sys" }
+torch-sys-plus = { version = "0.18.2", path = "torch-sys-plus" }
 zip = "0.6"
 half = "2"
 safetensors = "0.3.0"
@@ -39,16 +39,16 @@ anyhow = "^1.0.60"
 
 [workspace]
 members = [
-  "torch-sys",
+  "torch-sys-plus",
   "pyo3-tch",
   "examples/python-extension",
 ]
 
 [features]
-download-libtorch = ["torch-sys/download-libtorch"]
-python-extension = ["torch-sys/python-extension"]
+download-libtorch = ["torch-sys-plus/download-libtorch"]
+python-extension = ["torch-sys-plus/python-extension"]
 rl-python = ["cpython"]
-doc-only = ["torch-sys/doc-only"]
+doc-only = ["torch-sys-plus/doc-only"]
 cuda-tests = []
 
 [package.metadata.docs.rs]

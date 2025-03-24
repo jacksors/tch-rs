@@ -1,5 +1,5 @@
 use crate::{TchError, Tensor};
-use torch_sys::python::{self, C_pyobject};
+use torch_sys_plus::python::{self, C_pyobject};
 
 pub type CPyObject = C_pyobject;
 
