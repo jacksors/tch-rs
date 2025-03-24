@@ -6,7 +6,7 @@ edition = "2021"
 build = "build.rs"
 
 description = "Rust wrappers for the PyTorch C++ api (libtorch)."
-repository = "https://github.com/LaurentMazare/tch-rs"
+repository = "https://github.com/jacksors/tch-rs"
 keywords = ["pytorch", "deep-learning", "machine-learning"]
 categories = ["science"]
 license = "MIT/Apache-2.0"
