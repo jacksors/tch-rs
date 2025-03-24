@@ -1,7 +1,7 @@
 /// Pretty printing of tensors
 /// This implementation should be in line with the PyTorch version.
 /// https://github.com/pytorch/pytorch/blob/7b419e8513a024e172eae767e24ec1b849976b13/torch/_tensor_str.py
-use crate::{Kind, Tensor};
+use crate::{Device, Kind, Tensor};
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
 enum BasicKind {
@@ -45,6 +45,10 @@ impl BasicKind {
 impl std::fmt::Debug for Tensor {
     fn fmt(&self, f: &mut std::fmt::Formatter) -> std::fmt::Result {
         if self.defined() {
+            if self.device().eq(&Device::Mps) {
+                return write!(f, "Tensor[{:?}]", self.size())
+            }
+
             match self.f_kind() {
                 Err(err) => write!(f, "Tensor[{:?}, {:?}]", self.size(), err),
                 Ok(kind) => {
