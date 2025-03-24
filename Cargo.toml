@@ -1,5 +1,5 @@
 [package]
-name = "tch_plus"
+name = "tch-plus"
 version = "0.18.1"
 authors = ["Laurent Mazare <lmazare@gmail.com>"]
 edition = "2021"
